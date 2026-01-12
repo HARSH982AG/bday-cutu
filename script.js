@@ -1,17 +1,14 @@
-// 🎂 14 Jan 2026 — 12:00 AM
-// Jan = 0
 console.log("Script loaded at", new Date().toISOString());
 
-const unlockTime = new Date(2026, 0, 14, 0, 0, 0).getTime();
-
-
-
-
+// 🧪 TEST MODE — unlock in 60 seconds
+const unlockTime = Date.now() + 60 * 1000;
 
 const lock = document.getElementById("lock");
 const letter = document.getElementById("letter");
 const countdown = document.getElementById("countdown");
 const waitMsg = document.getElementById("waitMsg");
+
+let unlocked = false;
 
 /* 🌸 Rose petal confetti */
 function launchConfetti() {
@@ -25,7 +22,6 @@ function launchConfetti() {
     petal.style.animationDuration = 3 + Math.random() * 2 + "s";
 
     document.body.appendChild(petal);
-
     setTimeout(() => petal.remove(), 5000);
   }
 }
@@ -38,9 +34,13 @@ function vibrateOnUnlock() {
 }
 
 function updateCountdown() {
+  if (unlocked) return;
+
   const diff = unlockTime - Date.now();
 
+  // 🔑 FINAL FIX — prevents "0s stuck"
   if (diff <= 1000) {
+    unlocked = true;
     lock.classList.add("hidden");
     letter.classList.remove("hidden");
     launchConfetti();
