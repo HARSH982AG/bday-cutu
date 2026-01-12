@@ -1,6 +1,7 @@
 // 🎂 14 Jan 2026 — 12:00 AM
 // Jan = 0
-const unlockTime = new Date(2026, 0, 14, 0, 0, 0).getTime();
+const unlockTime = Date.now() + 60 * 1000; 
+
 
 const lock = document.getElementById("lock");
 const letter = document.getElementById("letter");
