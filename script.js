@@ -1,6 +1,8 @@
 // 🎂 14 Jan 2026 — 12:00 AM
 // Jan = 0
-const unlockTime = Date.now() + 60 * 1000; 
+const unlockTime = Date.now() + 60 * 1000; // TEST MODE: unlock in 60 seconds
+
+
 
 
 const lock = document.getElementById("lock");
@@ -35,7 +37,7 @@ function vibrateOnUnlock() {
 function updateCountdown() {
   const diff = unlockTime - Date.now();
 
-  if (diff <= 0) {
+  if (diff <= 1000) {
     lock.classList.add("hidden");
     letter.classList.remove("hidden");
     launchConfetti();
