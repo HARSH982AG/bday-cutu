@@ -1,6 +1,7 @@
 // 🎂 14 Jan 2026 — 12:00 AM
 // Jan = 0
-const unlockTime = Date.now() + 60 * 1000; // TEST MODE: unlock in 60 seconds
+const unlockTime = new Date(2026, 0, 14, 0, 0, 0).getTime();
+
 
 
 
