@@ -1,5 +1,5 @@
 // iOS-safe date: Jan = 0
-const unlockTime = new Date(2025, 0, 14, 0, 0, 0).getTime();
+const unlockTime = new Date(2026, 0, 14, 0, 0, 0).getTime();
 
 const lock = document.getElementById("lock");
 const letter = document.getElementById("letter");
