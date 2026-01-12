@@ -3,23 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Birthday Cutu 💖</title>
+  <title>For Cutu 💖</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 
-  <!-- iOS app feel -->
+  <!-- iOS app-like feel -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#ee9ca7">
 </head>
 <body>
 
+  <!-- LOCK / COUNTDOWN SCREEN -->
   <div class="card" id="lock">
     <h1>For Cutu 💖</h1>
-    <p>This waited for the exact moment you were born.</p>
+
+    <p class="soft-text">
+      Some things are worth waiting for…<br>
+      especially you, Cutu 💕
+    </p>
+
     <div id="countdown">Loading…</div>
-    <p class="tap">Tap anywhere 💗</p>
+
+    <div class="pulse">💗</div>
+
+    <p id="waitMsg" class="wait-msg"></p>
   </div>
 
+  <!-- LETTER SCREEN -->
   <div class="card hidden" id="letter">
     <h1>Happy Birthday Cutu 💖</h1>
     <div class="letter">
@@ -45,10 +55,7 @@ And don’t forget… I’m always right here for you 😌💋🫶🏻
     </div>
   </div>
 
-  <audio id="music" loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9b2d9c2a94.mp3" type="audio/mpeg">
-  </audio>
-
-  <script src="script.js"></script>
+  <!-- cache-busted JS -->
+  <script src="script.js?v=FINAL"></script>
 </body>
 </html>
