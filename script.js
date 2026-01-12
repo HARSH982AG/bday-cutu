@@ -1,5 +1,7 @@
 // 🎂 14 Jan 2026 — 12:00 AM
 // Jan = 0
+console.log("Script loaded at", new Date().toISOString());
+
 const unlockTime = new Date(2026, 0, 14, 0, 0, 0).getTime();
 
 
