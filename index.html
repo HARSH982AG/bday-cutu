@@ -5,84 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Happy Birthday Cutu 💖</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+  <link rel="stylesheet" href="style.css" />
 
-    body {
-      margin: 0;
-      font-family: Georgia, serif;
-      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.96);
-      border-radius: 18px;
-      padding: 22px;
-      width: 100%;
-      max-width: 420px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      animation: fadeIn 1.5s ease;
-    }
-
-    h1 {
-      color: #e75480;
-      text-align: center;
-      margin-top: 0;
-    }
-
-    p {
-      text-align: center;
-      margin: 10px 0;
-    }
-
-    #countdown {
-      font-size: 1.4rem;
-      font-weight: bold;
-      text-align: center;
-      margin-top: 16px;
-      color: #444;
-    }
-
-    .letter {
-      white-space: pre-line;
-      font-size: 1rem;
-      line-height: 1.6;
-      text-align: left;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-  </style>
+  <!-- iOS app feel -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#ee9ca7">
 </head>
 <body>
 
-  <!-- LOCK SCREEN -->
   <div class="card" id="lock">
     <h1>For Cutu 💖</h1>
     <p>This waited for the exact moment you were born.</p>
-    <div id="countdown">Loading timer…</div>
+    <div id="countdown">Loading…</div>
+    <p class="tap">Tap anywhere 💗</p>
   </div>
 
-  <!-- LETTER -->
   <div class="card hidden" id="letter">
     <h1>Happy Birthday Cutu 💖</h1>
     <div class="letter">
@@ -108,37 +45,10 @@ And don’t forget… I’m always right here for you 😌💋🫶🏻
     </div>
   </div>
 
-  <script>
-    // ✅ iOS-SAFE DATE (IMPORTANT)
-    // Format: new Date(year, monthIndex, day, hour, minute, second)
-    // Month index: January = 0
-    const unlockTime = new Date(2025, 0, 14, 0, 0, 0).getTime();
+  <audio id="music" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9b2d9c2a94.mp3" type="audio/mpeg">
+  </audio>
 
-    const lock = document.getElementById("lock");
-    const letter = document.getElementById("letter");
-    const countdown = document.getElementById("countdown");
-
-    function updateTimer() {
-      const now = Date.now();
-      const diff = unlockTime - now;
-
-      if (diff <= 0) {
-        lock.classList.add("hidden");
-        letter.classList.remove("hidden");
-        return;
-      }
-
-      const hours = Math.floor(diff / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-      countdown.textContent =
-        `Unlocks in ${hours}h ${minutes}m ${seconds}s`;
-    }
-
-    updateTimer();
-    setInterval(updateTimer, 1000);
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
